@@ -14,7 +14,7 @@ import random
 # Role: Reporter
 # Bonus Track:
 # Check if User was created successfully
-# Create Page Objects for each page
+# Create page_objects for each page
 
 
 class SearchTests(unittest.TestCase):

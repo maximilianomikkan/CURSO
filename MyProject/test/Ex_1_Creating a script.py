@@ -11,7 +11,7 @@ class SearchTests(unittest.TestCase):
         self.driver.maximize_window()
 
         # navigate to Redmine Login  page
-        self.driver.get("http://192.168.64.2/login")
+        self.driver.get("http://192.168.64.3/login")
 
 
     def test_search_by_id(self):
