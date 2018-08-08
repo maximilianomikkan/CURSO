@@ -52,6 +52,9 @@ class SearchTests(unittest.TestCase):
         self.search_field_user_active = self.driver.find_element_by_xpath("//*[@id='loggedas']/a")
         assert self.search_field_user_active.text == "maximilianomikkan", "------------Houston we've got a problem--1----------"
 
+
+
+
         # get the PROJECT link
         self.search_field_menu_projects = self.driver.find_element_by_xpath("//*[@id='top-menu']/ul/li[3]/a")
         self.search_field_menu_projects.click()
