@@ -1,23 +1,21 @@
-#+import unittest
-from page_objects.base_page_po import BasePage
-from features.environment import Environment
 from page_objects.login_po import Login
-#from selenium import webdriver
+from page_objects.base_page_po import BasePage
+from selenium.webdriver.common.by import By
+import unittest
+
+class logintest(BasePage):
+
+    # def __init__(self, driver):
+    #     self.driver = driver
 
 
-class Login():
-    print("Hola0")
-    def __init__(self, driver):
-        self.driver = driver
-        print("Hola1")
-        env = Environment()
-        env.setUp()
 
+    def test_login(self):
+        login_page = Login(self.driver)
+        login_page.metodo_login_redmine("maximilianomikkan", "cardaABC123")
 
-        login = Login()
-        login.login_redmine("miuser", "mipass")
-        #home = login.login_redmine(self, "user", "pass")
-        #assert home.txf_home_loc.text == "Home"
-        print("Hola2")
+        self.lbl = self.driver.find_element_by_xpath("//*[@id='content']/h2")
+        assert self.lbl.text == "My page", "------------Houston we've got a problem--2----------"
 
-        env.tearDown()
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
