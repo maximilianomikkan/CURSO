@@ -1,6 +1,7 @@
-from page_objects.base_page_po import BasePage
+from page_objects.login_po import Login
 from selenium.webdriver.common.by import By
-from selenium import webdriver
+import unittest
+from page_objects.base_page_po import BasePage
 
 
 
@@ -8,11 +9,30 @@ from selenium import webdriver
 class Home(BasePage):
 
     def __init__(self, driver):
-        #self.driver = driver
-        #super(Home, self).__init__(driver)
+        self.driver = driver
 
-        # Home locators
-        self.txf_home_loc = driver.find_element(By.XPATH, "//*[@id='content']/h2")
+        # Transformo locators en elementos
+        self.lbl = self.driver.find_element_by_xpath("//*[@id='content']/h2")
+
+    def navigate_to_projects(self):
+        # get the PROJECT link
+        self.search_field_menu_projects = self.driver.find_element_by_xpath("//*[@id='top-menu']/ul/li[3]/a")
+        self.search_field_menu_projects.click()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

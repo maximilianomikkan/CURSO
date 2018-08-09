@@ -8,7 +8,7 @@ class Login(BasePage):
     def __init__(self, driver):
         self.driver = driver
 
-        # Transformo locators en elementos
+        # Locators en Elements
         self.txf_username_loc = driver.find_element(By.XPATH, "//*[@id='username']")
         self.txf_password_loc = driver.find_element(By.XPATH, "//*[@id='password']")
         self.btn_submit_loc = driver.find_element(By.XPATH, "//*[@id='login-submit']")
@@ -24,5 +24,3 @@ class Login(BasePage):
 
         # hago clic en el boton Acceder
         self.btn_submit_loc.click()
-
-        #return Home()
