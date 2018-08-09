@@ -13,7 +13,7 @@ class Login(BasePage):
         self.txf_password_loc = driver.find_element(By.XPATH, "//*[@id='password']")
         self.btn_submit_loc = driver.find_element(By.XPATH, "//*[@id='login-submit']")
 
-    def metodo_login_redmine(self, username, password):
+    def complete_and_sumbit(self, username, password):
         # limpio los text fields
         self.txf_username_loc.clear()
         self.txf_password_loc.clear()

@@ -3,16 +3,12 @@ from page_objects.base_page_po import BasePage
 from selenium.webdriver.common.by import By
 import unittest
 
-class logintest(BasePage):
+class myTests(BasePage):
 
-    # def __init__(self, driver):
-    #     self.driver = driver
-
-
-
-    def test_login(self):
+    def test_login_redmine(self):
+        print("---test_login_redmine---")
         login_page = Login(self.driver)
-        login_page.metodo_login_redmine("maximilianomikkan", "cardaABC123")
+        login_page.complete_and_sumbit("maximilianomikkan", "cardaABC123")
 
         self.lbl = self.driver.find_element_by_xpath("//*[@id='content']/h2")
         assert self.lbl.text == "My page", "------------Houston we've got a problem--2----------"
