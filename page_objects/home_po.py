@@ -4,11 +4,10 @@ import unittest
 from page_objects.base_page_po import BasePage
 
 
-
-
 class Home(BasePage):
 
     def __init__(self, driver):
+        super(Home, self).__init__(self.driver)
         self.driver = driver
 
         # Transformo locators en elementos
