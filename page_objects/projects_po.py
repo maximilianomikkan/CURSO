@@ -31,8 +31,8 @@ class Projects(BasePage):
 
         gen = aleatorio("abcdefghijklmnohghskjfhskfjsdfspqrstuvwxyz")
         nombre_de_proyecto = next(gen)
-        descripcion_de_proyecto = "Descripcion del Proyecto ", nombre_de_proyecto
-        identificador_de_proyecto = "identificador-del-proyecto-", nombre_de_proyecto
+        descripcion_de_proyecto = "Descripcion del Proyectoo ", nombre_de_proyecto
+        identificador_de_proyecto = "identificador-del-proyectoo-", nombre_de_proyecto
 
         # ELEMENTS
         self.search_field_project_name = self.driver.find_element_by_id("project_name")

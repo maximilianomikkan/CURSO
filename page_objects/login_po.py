@@ -24,3 +24,21 @@ class Login(BasePage):
 
         # hago clic en el boton Acceder
         self.btn_submit_loc.click()
+
+
+
+
+
+# METODO ANTERIOR LO DIVIDÍ EN 2 PARA USARLO CON LO DE BEHAVE..
+    def complete(self, username, password):
+        # limpio los text fields
+        self.txf_username_loc.clear()
+        self.txf_password_loc.clear()
+
+        # cargo los text fields
+        self.txf_username_loc.send_keys(username)
+        self.txf_password_loc.send_keys(password)
+
+    def sumbit(self, username, password):
+        # hago clic en el boton Acceder
+        self.btn_submit_loc.click()
