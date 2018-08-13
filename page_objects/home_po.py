@@ -7,19 +7,14 @@ from page_objects.base_page_po import BasePage
 class Home(BasePage):
 
     def __init__(self, driver):
-        super(Home, self).__init__(self.driver)
-
-        # Transformo locators en elementos
-        self.lbl = self.driver.find_element_by_xpath("//*[@id='content']/h2")
-
-
+        super(Home, self).__init__(driver)
 
     def get_logged_label(self):
-        self.label = self.driver.find_element_by_xpath("//*[@id='loggedas']")
+        logged_as_we = self.driver.find_element_by_xpath("//*[@id='loggedas']")
+        return logged_as_we.text
 
 
     def navigate_to_projects(self):
-        # get the PROJECT link
         self.search_field_menu_projects = self.driver.find_element_by_xpath("//*[@id='top-menu']/ul/li[3]/a")
         self.search_field_menu_projects.click()
 

@@ -4,6 +4,6 @@ Feature: Login into Redmine
     Given Setup chrome driver
     And I connect to redmine
     When I login into redmine
-      | user              |  password           |
-      | maximilianomikkan | cardaABC123         |
+      | user    |  password           |
+      | mmikkan | cardaABC123         |
     Then Validate I'm logged in

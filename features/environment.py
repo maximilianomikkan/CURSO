@@ -5,6 +5,9 @@ def before_all(context):
     pass
 
 
-def after_all(context):
-    # close the browser window
+def after_scenario(context, scenario):
     context.driver.quit()
+
+
+def after_all(context):
+    pass

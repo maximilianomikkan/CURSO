@@ -4,10 +4,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-class BasePage (unittest.TestCase):
+class BasePage:
 
     def __init__(self, driver):
-        super(BasePage,self).__init__(driver)
+        self.driver=driver
     #
     # def setUp(self):
     #     # create a new Chrome session

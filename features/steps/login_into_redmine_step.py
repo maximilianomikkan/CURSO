@@ -34,16 +34,14 @@ def step_impl(context):
 
 @when("I login into redmine")
 def step_impl(context):
-    #login_po = Login(context.driver)
-    login_po = Login(context)
-    #login_po.complete_and_sumbit("maximilianomikkan", "cardaABC123")
-    login_po.complete_and_sumbit("user","password")
+    login_po = Login(context.driver)
+    login_po.complete_and_sumbit("mmikkan","cardaABC123")
 
 
 
 @then("Validate I'm logged in")
 def step_impl(context):
     home_po = Home(context.driver)
-    texto_esperado = "Logged in as maximilianomikkan"
+    texto_esperado = "Logged in as mmikkan"
     assert texto_esperado == home_po.get_logged_label()
 
