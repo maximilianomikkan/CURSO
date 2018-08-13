@@ -8,10 +8,15 @@ class Home(BasePage):
 
     def __init__(self, driver):
         super(Home, self).__init__(self.driver)
-        self.driver = driver
 
         # Transformo locators en elementos
         self.lbl = self.driver.find_element_by_xpath("//*[@id='content']/h2")
+
+
+
+    def get_logged_label(self):
+        self.label = self.driver.find_element_by_xpath("//*[@id='loggedas']")
+
 
     def navigate_to_projects(self):
         # get the PROJECT link

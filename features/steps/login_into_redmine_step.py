@@ -2,71 +2,53 @@ from behave import *
 from page_objects.login_po import Login
 from page_objects.home_po import Home
 from page_objects.my_page_po import MyPage
+from page_objects.home_po import Home
 from selenium import webdriver
 
 
-@given('completo el formulario')
+@given("Setup chrome driver")
 def step_impl(context):
-    print("---test_login_redmine---")
-    login_page = Login(context.driver)
-    login_page.complete_and_sumbit("mmikkan", "cardaABC123")
 
+    #if driver == "chrome":
+        #MAC
+    driver = webdriver.Chrome(executable_path="/Users/maximacbook/Repositorio1/lfs/webdriver/chromedriver")
+        #DELL
+        #driver == webdriver.Chrome(executable_path="/Users/maximacbook/Repositorio1/lfs/webdriver/chromedriver.exe")
 
-@When('le doy click al boton')
-def step_impl(context):
-    login_page = Login(context.driver)
-    # MACBOOK
-    #login_page.complete_and_sumbit("maximilianomikkan", "cardaABC123")
-    #DELL BSF
-    #login_page.sumbit()
-    login_page.btn_submit_loc.click()
-
-
-@Then('veo el home')
-def step_impl(context):
-    my_page = MyPage(context.driver)
-    assert my_page.lbl2.text == "My page", "------------Houston we've got a problem--2----------"
-
-
-@given("Setup {driver} driver")
-def step_impl(context, driver):
-    """
-    :type context: behave.runner.Context
-    """
-    if driver == "chrome":
-        driver == webdriver.Chrome(executable_path="project_roo/lfs/webdriver/chromedriver.exe")
-    elif driver == "firefox":
-        driver = webdriver.Firefox(executable_path="project_roo/lfs/webdriver/geckodriver.exe")
-
+    #elif driver == "firefox":
+     #   driver = webdriver.Firefox(executable_path="project_roo/lfs/webdriver/geckodriver")
 
     driver.implicitly_wait(5)
     driver.maximize_window()
     context.driver = driver
 
 
-@step("I connect to redmine")
+
+
+@given("I connect to redmine")
 def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    url = ""
-    context.driver.get(url)
+
+    urlMAC = "http://192.168.64.2/login"
+    urlDELL = "http://localhost/redmine/login"
+
+    context.driver.get(urlMAC)
 
 
 @when("I login into redmine")
 def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    login_po = Login(context.driver)
-    login_po.login("user", "password")
+    print("wwwwwwwww")
+    #login_po = Login(context.driver)
+    login_po = Login(context)
+    print("qqqqqq")
+    #login_po.complete_and_sumbit("maximilianomikkan", "cardaABC123")
+    login_po.complete_and_sumbit("user","password")
+    print("saliooooooooooooo")
 
 
 @then("Validate I'm logged in")
 def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    expected = "Logged in as user"
 
-    assert expected == context.homepage_po.get_logged_as_label()
+    home_po = Home(context.driver)
+    texto_esperado = "Logged in as maximilianomikkan"
+    assert texto_esperado == home_po.get_logged_label()
+

@@ -9,7 +9,7 @@ import random
 class Projects(BasePage):
 
     def __init__(self, driver):
-        self.driver = driver
+        super(Projects, self).__init__(self.driver)
 
 
     def navigate_to_new_projects(self):

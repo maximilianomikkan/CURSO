@@ -4,39 +4,33 @@ from selenium.webdriver.common.by import By
 
 
 class Login(BasePage):
-
     def __init__(self, driver):
+        #super(Login, self).__init__(driver)
         self.driver = driver
+        print("holaaaaaa")
+        txf_username_we = (By.ID, "username")
 
-    def complete_and_sumbit(self, username, password):
-        # limpio los text fields
-        # Locators en Elements
+
+
+    def complete_and_sumbit(self, user, password):
+
+        print("ttt")
         txf_username_we = self.driver.find_element(By.XPATH, "//*[@id='username']")
-        txf_username_we.clear()
+        txf_username_we = self.driver.find_element(By.ID, "username")
+
+        print("rrr")
+
 
         txf_password_we = self.driver.find_element(By.XPATH, "//*[@id='password']")
         txf_password_we.clear()
+        print("aaaaaaaa")
 
         # cargo los text fields
-        txf_username_we.send_keys(username)
-        txf_password_we.send_keys(password)
+        #txf_username_we.send_keys(user)
+        #txf_password_we.send_keys(password)
+        txf_username_we.sends_keys(user)
+        txf_password_we.sends_keys(password)
 
         # hago clic en el boton Acceder
         btn_submit_we = self.driver.find_element(By.XPATH, "//*[@id='login-submit']")
         btn_submit_we.click()
-
-
-# METODO ANTERIOR LO DIVIDÍ EN 2 PARA USARLO CON LO DE BEHAVE..
-    def complete(self, username, password):
-        # limpio los text fields
-        self.txf_username_loc.clear()
-        self.txf_password_loc.clear()
-
-        # cargo los text fields
-        self.txf_username_loc.send_keys(username)
-        self.txf_password_loc.send_keys(password)
-        time.sleep(3)
-
-    def sumbit(self):
-        # hago clic en el boton Acceder
-        self.btn_submit_loc.click()
