@@ -8,19 +8,19 @@ class BasePage:
 
     def __init__(self, driver):
         self.driver=driver
-    #
+
+
     # def setUp(self):
     #     # create a new Chrome session
     #     self.driver = webdriver.Chrome()
     #     self.driver.implicitly_wait(30)
     #     self.driver.maximize_window()
-    #
     #     # navigate to Redmine Login  page
     #     # MACBOOK
     #     # self.driver.get("http://192.168.64.2/login"
     #     # DELL BSF
     #     self.driver.get("http://localhost/redmine/login")
-    #
+
     # def tearDown(self):
     #     # close the browser window
     #     self.driver.quit()

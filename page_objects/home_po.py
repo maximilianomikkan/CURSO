@@ -5,9 +5,9 @@ from page_objects.base_page_po import BasePage
 
 
 class Home(BasePage):
-
     def __init__(self, driver):
         super(Home, self).__init__(driver)
+
 
     def get_logged_label(self):
         logged_as_we = self.driver.find_element_by_xpath("//*[@id='loggedas']")
@@ -17,36 +17,3 @@ class Home(BasePage):
     def navigate_to_projects(self):
         self.search_field_menu_projects = self.driver.find_element_by_xpath("//*[@id='top-menu']/ul/li[3]/a")
         self.search_field_menu_projects.click()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# #y además puso esto el Cris
-#
-#     def __init__(self, driver):
-#         super(Home, self).__init__(driver)
-#
-#
-#
-#     def click_on_link(self):
-#         we = self.driver.find_element(self._lnk_home_loc[0], self._lnk_home_loc[1])
-
