@@ -1,4 +1,5 @@
 from tmsangular.page_objects.base_page_tms_po import BasePage
+from tmsangular.page_objects.commercial.clients_tms_po import Clients
 from selenium.webdriver.common.by import By
 
 
@@ -19,3 +20,6 @@ class Login(BasePage):
 
         btn_submit_we = self.driver.find_element(By.XPATH, "/html/body/app-root/div/div/div[2]/div/app-login/div/div/form/div/div[5]/button/span")
         btn_submit_we.click()
+
+
+
