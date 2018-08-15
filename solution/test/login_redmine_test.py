@@ -1,8 +1,6 @@
-from page_objects.login_po import Login
-from page_objects.home_po import Home
-from page_objects.base_page_po import BasePage
-from selenium.webdriver.common.by import By
-import time
+from solution.page_objects.login_po import Login
+from solution.page_objects.home_po import Home
+from solution.page_objects.base_page_po import BasePage
 import unittest
 
 class myTests(BasePage):

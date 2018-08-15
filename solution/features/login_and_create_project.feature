@@ -5,7 +5,7 @@ Feature: Login into Redmine and Create a Project
     And I connect to redmine
     When I login into redmine
       | user              | password            |
-      | maximilianomikkan | cardaABC123         |
-      #| mmikkan           | cardaABC123         |
+      #| maximilianomikkan | cardaABC123         |
+      | mmikkan           | cardaABC123         |
     And I create a project
     Then Validate Project was created

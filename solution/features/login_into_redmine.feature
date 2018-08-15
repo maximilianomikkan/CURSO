@@ -5,6 +5,6 @@ Feature: Login into Redmine
     And I connect to redmineq
     When I login into redmineq
       | user              | password            |
-      | maximilianomikkan | cardaABC123         |
-      #| mmikkan           | cardaABC123         |
+      #| maximilianomikkan | cardaABC123         |
+      | mmikkan           | cardaABC123         |
     Then Validate I'm logged inq

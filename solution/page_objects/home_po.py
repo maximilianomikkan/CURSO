@@ -1,7 +1,4 @@
-from page_objects.login_po import Login
-from selenium.webdriver.common.by import By
-import unittest
-from page_objects.base_page_po import BasePage
+from solution.page_objects.base_page_po import BasePage
 
 
 class Home(BasePage):

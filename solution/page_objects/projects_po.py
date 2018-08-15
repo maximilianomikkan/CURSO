@@ -1,7 +1,4 @@
-import time
-
-from page_objects.base_page_po import BasePage
-from selenium.webdriver.common.by import By
+from solution.page_objects.base_page_po import BasePage
 import random
 
 
