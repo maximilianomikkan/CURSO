@@ -24,17 +24,23 @@ def step_impl(context):
     #context.driver.get(urlDELL)
 
 
-@when("I login as '<valid>' user into redmine with '<user>' and '<password>'")
-def step_impl(context, valid, user, password):
+@when("I login as user into redmine with '{user}' and '{password}'")
+def step_impl(context, user, password):
     login_po = Login(context.driver)
-    time.sleep(4)
-    login_po.complete_and_sumbit(user=["user"], password=["password"], valid=["valid"])
+    time.sleep(1)
+    #login_po.complete_and_sumbit(user=user, password=password)
+    login_po.complete_and_sumbit(user, password)
+    time.sleep(1)
 
 
-@then("Validate I'm logged in")
-def step_impl(context):
-    home_po = Home(context.driver)
-    #texto_esperado = "Logged in as mmikkan"
-    texto_esperado = "Logged in as maximilianomikkan"
-    assert texto_esperado == home_po.get_logged_label()
-    print("------------------------------------Login realizado con Éxito------------------------------------")
+@Then("I validate I'm logged in '{valid}'")
+def step_impl(context, valid):
+    login_po = Login(context.driver)
+    texto_flash = "Usuario o contraseña inválido."
+    if texto_flash == login_po.inicia_sesion():
+        print("------------------------------------Login NOOOO realizado con Éxito------------------------------------")
+    else:
+        print("------------------------------------Login realizado con Éxito------------------------------------")
+
+
+

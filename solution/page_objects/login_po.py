@@ -9,14 +9,18 @@ class Login(BasePage):
         self.driver = driver
 
 
-    def complete_and_sumbit(self, user, password,valid):
+    def complete_and_sumbit(self, user, password):
         txf_username_we = self.driver.find_element(By.XPATH, "//*[@id='username']")
         txf_username_we.clear()
         txf_username_we.send_keys(user)
         txf_password_we = self.driver.find_element(By.XPATH, "//*[@id='password']")
         txf_password_we.clear()
         txf_password_we.send_keys(password)
-        new_status = self.send_keys(valid)
+
 
         btn_submit_we = self.driver.find_element(By.XPATH, "//*[@id='login-submit']")
         btn_submit_we.click()
+
+    def inicia_sesion(self):
+        texto_flash = self.driver.find_element_by_xpath("//*[@id='flash_error']")
+        return texto_flash.text
