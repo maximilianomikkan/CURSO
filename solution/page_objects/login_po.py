@@ -21,6 +21,6 @@ class Login(BasePage):
         btn_submit_we = self.driver.find_element(By.XPATH, "//*[@id='login-submit']")
         btn_submit_we.click()
 
-    def inicia_sesion(self):
+    def mensaje_invalid_login(self):
         texto_flash = self.driver.find_element_by_xpath("//*[@id='flash_error']")
         return texto_flash.text

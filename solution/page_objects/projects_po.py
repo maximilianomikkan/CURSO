@@ -40,7 +40,7 @@ class Projects(BasePage):
         search_field_project_description.clear()
         search_field_project_identifier.clear()
         # SENDS
-        search_field_project_name.send_keys("Proyecto ", nombre_de_proyecto)
+        search_field_project_name.send_keys("Proyyecto ", nombre_de_proyecto)
         search_field_project_description.send_keys(descripcion_de_proyecto)
         search_field_project_identifier.send_keys(identificador_de_proyecto)
 

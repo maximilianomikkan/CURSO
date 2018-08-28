@@ -7,7 +7,8 @@ class Home(BasePage):
 
 
     def get_logged_label(self):
-        logged_as_we = self.driver.find_element_by_xpath("//*[@id='loggedas']")
+        logged_as_we = self.driver.find_element_by_xpath("//*[@id='content']/h2")
+        #logged_as_we = self.driver.find_element_by_xpath("//*[@id='loggedas']")
         return logged_as_we.text
 
 
