@@ -1,18 +1,14 @@
-Feature: Login into Redmine and Create a Project
+Feature: delete all projects
 
-  Scenario Outline: login into redmine and create a project
+  Scenario Outline: delete all projects
     Given Setup chrome driver
     And I connect to redmine
     When I login as user into redmine with '<user>' and '<password>'
     And I validate I'm logged in '<valid>'
-    Then I create a project
-    And Validate Project was created
+    And I delete all projects
+    Then I validate all projects were deleted
 
     Examples:
       | user               | password       | valid  |
       #| maximilianomikkan  | cardaABC123    | true   |
       | mmikkan            | cardaABC123    | true  |
-
-
-
-

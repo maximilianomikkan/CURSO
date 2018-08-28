@@ -17,7 +17,6 @@ class Projects(BasePage):
         # verificar si estoy en la otra pagina
 
 
-
     def complete_new_project_form(self):
         def aleatorio(opciones):
             opciones = list(opciones)
@@ -45,7 +44,7 @@ class Projects(BasePage):
         search_field_project_identifier.send_keys(identificador_de_proyecto)
 
 
-        # Locators de checkboxes en Elementes
+        # Locators de checkboxes en Elementos W
         search_checkbox_repository = self.driver.find_element_by_id("project_enabled_module_names_repository")
         search_field_project_public = self.driver.find_element_by_id("project_is_public")
         search_checkbox_boards = self.driver.find_element_by_id("project_enabled_module_names_boards")
@@ -104,6 +103,15 @@ class Projects(BasePage):
     def get_successfull_project_label(self):
         successfull_project_we = self.driver.find_element_by_id("flash_notice")
         return successfull_project_we.text
+
+    def navigate_to_administration(self):
+        # get the ADMINISTRATION link
+        search_field_menu_administration = self.driver.find_element_by_xpath("//*[@id='top-menu']/ul/li[4]/a")
+        search_field_menu_administration.click()
+
+
+
+
 
 
 

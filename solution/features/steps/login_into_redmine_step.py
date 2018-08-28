@@ -7,8 +7,8 @@ import time
 
 @given("Setup chrome driver")
 def step_impl(context):
-    driver = webdriver.Chrome(executable_path="/Users/maximacbook/Repositorio/solution/lfs/webdriver/chromedriver")
-    #driver = webdriver.Chrome(executable_path="C:/Users/mmikkan/Repositorio/solution/lfs/webdriver/chromedriver.exe")
+    #driver = webdriver.Chrome(executable_path="/Users/maximacbook/Repositorio/solution/lfs/webdriver/chromedriver")
+    driver = webdriver.Chrome(executable_path="C:/Users/mmikkan/Repositorio/solution/lfs/webdriver/chromedriver.exe")
 
     driver.implicitly_wait(3)
     driver.maximize_window()
@@ -17,11 +17,11 @@ def step_impl(context):
 
 @given("I connect to redmine")
 def step_impl(context):
-    urlMAC = "http://192.168.64.2/login"
-    context.driver.get(urlMAC)
+    #urlMAC = "http://192.168.64.2/login"
+    #context.driver.get(urlMAC)
 
-    #urlDELL = "http://localhost/redmine/login"
-    #context.driver.get(urlDELL)
+    urlDELL = "http://localhost/redmine/login"
+    context.driver.get(urlDELL)
 
 
 @when("I login as user into redmine with '{user}' and '{password}'")
@@ -39,16 +39,14 @@ def step_impl(context, valid):
     if valid == "false":
         texto_esperado = "Usuario o contraseña inválido."
         assert texto_esperado == login_po.mensaje_invalid_login(),"------------Escenario con datos incorrectos----------"
-        print(valid)
-        print("")
+
 
     else:
         if valid == "true":
             home_po = Home(context.driver)
             texto_esperado = "My page"
             assert texto_esperado == home_po.get_logged_label(), "------------Escenario con datos correctos----------"
-            print(valid)
-            print("")
+
 
 
 

@@ -11,6 +11,11 @@ class Home(BasePage):
         #logged_as_we = self.driver.find_element_by_xpath("//*[@id='loggedas']")
         return logged_as_we.text
 
+    def navigate_to_administration(self):
+        # get the administration link
+        search_field_menu_administration = self.driver.find_element_by_xpath("//*[@id='top-menu']/ul/li[4]/a")
+        search_field_menu_administration.click()
+
 
 
 
