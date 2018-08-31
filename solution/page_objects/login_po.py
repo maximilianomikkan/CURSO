@@ -17,7 +17,6 @@ class Login(BasePage):
         txf_password_we.clear()
         txf_password_we.send_keys(password)
 
-
         btn_submit_we = self.driver.find_element(By.XPATH, "//*[@id='login-submit']")
         btn_submit_we.click()
 

@@ -10,9 +10,9 @@ Feature: Login into Redmine
 
     Examples:
       | user               | password             | valid  |
-#      |                    |                      | false  |
-#      |                    | cardaABC123          | false  |
-#      | maximilianomikkan  |                      | false  |
+      | empty              | empty                | false  |
+      | empty              | cardaABC123          | false  |
+      | maximilianomikkan  | empty                | false  |
       | wrong_user         | cardaABC123          | false  |
       | maximilianomikkan  | wrong_password       | false  |
       | maximilianomikkan  | cardaABC123          | true   |

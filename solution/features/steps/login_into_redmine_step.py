@@ -7,8 +7,8 @@ import time
 
 @given("Setup chrome driver")
 def step_impl(context):
-    #driver = webdriver.Chrome(executable_path="/Users/maximacbook/Repositorio/solution/lfs/webdriver/chromedriver")
-    driver = webdriver.Chrome(executable_path="C:/Users/mmikkan/Repositorio/solution/lfs/webdriver/chromedriver.exe")
+    driver = webdriver.Chrome(executable_path="/Users/maximacbook/Repositorio/solution/lfs/webdriver/chromedriver")
+    #driver = webdriver.Chrome(executable_path="C:/Users/mmikkan/Repositorio/solution/lfs/webdriver/chromedriver.exe")
 
     driver.implicitly_wait(3)
     driver.maximize_window()
@@ -17,20 +17,22 @@ def step_impl(context):
 
 @given("I connect to redmine")
 def step_impl(context):
-    #urlMAC = "http://192.168.64.2/login"
-    #context.driver.get(urlMAC)
+    urlMAC = "http://192.168.64.2/login"
+    context.driver.get(urlMAC)
 
-    urlDELL = "http://localhost/redmine/login"
-    context.driver.get(urlDELL)
+    #urlDELL = "http://localhost/redmine/login"
+    #context.driver.get(urlDELL)
 
 
 @when("I login as user into redmine with '{user}' and '{password}'")
 def step_impl(context, user, password):
     login_po = Login(context.driver)
-    #time.sleep(1)
-    #login_po.complete_and_sumbit(user=user, password=password)
+
+    if user.lower() == "empty":
+        user = ""
+    if password.lower() == "empty":
+        password = ""
     login_po.complete_and_sumbit(user, password)
-    time.sleep(0.5)
 
 
 @then("I validate I'm logged in '{valid}'")

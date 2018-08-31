@@ -1,4 +1,7 @@
 from solution.page_objects.base_page_po import BasePage
+import time
+
+
 
 
 class Administration(BasePage):
@@ -13,25 +16,23 @@ class Administration(BasePage):
 
     def eliminar_proyectos(self):
 
-        a = 1
-        fila = self.driver.find_element_by_xpath("//*[@id='content']/div[2]/table/tbody/tr[1]/td[4]/a[3]")
-        while (a == 1):
-
-            fila.click()
-            yes_checkbutton = self.driver.find_element_by_xpath("//*[@id='confirm']")
-            yes_checkbutton.click()
-
-            delete_button = self.driver.find_element_by_xpath("//*[@id='content']/form/p/input")
-            delete_button.click()
-
+        while (True):
             try:
-                self.browser.find_element_by_xpath("//*[@id='content']/div[2]/table/tbody/tr[1]/td[4]/a[3]")
-                a == 1
-                print("1")
-                print("")
+                fila = self.driver.find_element_by_xpath("//*[@id='content']/div[2]/table/tbody/tr[1]/td[4]/a[3]")
+                fila.click()
+                yes_checkbutton = self.driver.find_element_by_xpath("//*[@id='confirm']")
+                yes_checkbutton.click()
+
+                delete_button = self.driver.find_element_by_xpath("//*[@id='content']/form/p/input")
+                delete_button.click()
+
+
+                if self.driver.find_element_by_xpath("//*[@id='content']/div[2]/table/tbody/tr[1]/td[4]/a[3]"):
+                    print("")
+                else:
+                    return False
             except:
-                a == 0
-                print("salio")
+                return False
 
     def mensaje_valido(self):
         texto_flash = self.driver.find_element_by_xpath("//*[@id='content']/p")

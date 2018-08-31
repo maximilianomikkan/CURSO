@@ -1,6 +1,8 @@
 from solution.page_objects.base_page_po import BasePage
 import random
-
+from faker import  Faker
+import time
+import pyautogui
 
 
 class Projects(BasePage):
@@ -18,30 +20,26 @@ class Projects(BasePage):
 
 
     def complete_new_project_form(self):
-        def aleatorio(opciones):
-            opciones = list(opciones)
-            while True:
-                r = random.choice(opciones)
-                opciones.remove(r)
-                yield r
-
-        gen = aleatorio("abcdefghijklmnohghskjfhskfjsdfspqrstuvwxyz")
-        nombre_de_proyecto = next(gen)
-        descripcion_de_proyecto = "Descrwipccion del Proyectoo ", nombre_de_proyecto
-        identificador_de_proyecto = "identwifficador-del-proyectoo-", nombre_de_proyecto
+        faker = Faker()
+        name = faker.word().lower()
 
         # ELEMENTS
-        search_field_project_name = self.driver.find_element_by_id("project_name")
-        search_field_project_description = self.driver.find_element_by_id("project_description")
-        search_field_project_identifier = self.driver.find_element_by_id("project_identifier")
+        search_field_project_name = self.driver.find_element_by_xpath("//*[@id='project_name']")
+        search_field_project_description = self.driver.find_element_by_xpath("//*[@id='project_description']")
+        search_field_project_identifier = self.driver.find_element_by_xpath("//*[@id='project_identifier']")
+
         # CLEARS
         search_field_project_name.clear()
         search_field_project_description.clear()
-        search_field_project_identifier.clear()
+
         # SENDS
-        search_field_project_name.send_keys("Proyyecto ", nombre_de_proyecto)
-        search_field_project_description.send_keys(descripcion_de_proyecto)
-        search_field_project_identifier.send_keys(identificador_de_proyecto)
+        search_field_project_name.send_keys("proyecto_", name)
+        search_field_project_description.send_keys("descripcion_", name)
+
+        # CLEARS and SENDS
+        search_field_project_identifier.clear()
+        search_field_project_identifier.send_keys("identificador_", name)
+
 
 
         # Locators de checkboxes en Elementos W
@@ -49,7 +47,6 @@ class Projects(BasePage):
         search_field_project_public = self.driver.find_element_by_id("project_is_public")
         search_checkbox_boards = self.driver.find_element_by_id("project_enabled_module_names_boards")
         search_checkbox_news = self.driver.find_element_by_id("project_enabled_module_names_news")
-        search_checkbox_calendar = self.driver.find_element_by_id("project_enabled_module_names_calendar")
         search_checkbox_calendar = self.driver.find_element_by_id("project_enabled_module_names_calendar")
         search_checkbox_documents = self.driver.find_element_by_id("project_enabled_module_names_documents")
         search_checkbox_gantt = self.driver.find_element_by_id("project_enabled_module_names_gantt")
@@ -75,6 +72,10 @@ class Projects(BasePage):
         search_checkbox_wiki.click()
 
 
+        #screenshot = pyautogui.screenshot()
+        #screenshot.save("/Users/maximacbook/Repositorio/solution/screenshots/zxcvbnm.png")
+
+
         # Click on CREATE button
         search_create_button = self.driver.find_element_by_name("commit")
         search_create_button.click()
@@ -84,8 +85,11 @@ class Projects(BasePage):
         search_save_button = self.driver.find_element_by_name("commit")
         search_save_button.click()
 
+        # -------------------------
+        # screenshot.show()
+        # -------------------------
 
-        print("------------------------------------Proyecto", nombre_de_proyecto,
+        print("------------------------------------Proyecto", name,
               "creado con Éxito------------------------------------")
 
 

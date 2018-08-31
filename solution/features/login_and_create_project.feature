@@ -10,8 +10,8 @@ Feature: Login into Redmine and Create a Project
 
     Examples:
       | user               | password       | valid  |
-      #| maximilianomikkan  | cardaABC123    | true   |
-      | mmikkan            | cardaABC123    | true  |
+      | maximilianomikkan  | cardaABC123    | true   |
+      #| mmikkan            | cardaABC123    | true  |
 
 
 
