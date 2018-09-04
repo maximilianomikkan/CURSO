@@ -1,5 +1,6 @@
 Feature: Delete projects
 
+  @Working
   Scenario Outline: delete projects
     Given Setup chrome driver
     And I connect to redmine
