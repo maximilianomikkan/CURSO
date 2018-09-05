@@ -75,7 +75,7 @@ class Projects(BasePage):
         date = datetime.datetime.now()
         myDate = date.today()
         myTime = date.today().time()
-        dateString = str(myDate.month) + "." + str(myDate.day) + "." + str(myDate.year) + "." + str(myTime)
+        dateString = str(myDate.month) + "-" + str(myDate.day) + "-" + str(myDate.year) + " - " + str(myTime.hour) + ":" + str(myTime.minute) + ":" + str(myTime.second)
         screenshot = pyautogui.screenshot()
         screenshot.save("/Users/maximacbook/Repositorio/solution/screenshots/"+dateString+" - "+name+".png")
 
