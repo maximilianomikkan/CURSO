@@ -1,9 +1,5 @@
 from solution.page_objects.base_page_po import BasePage
-import random
-from faker import  Faker
-import time
-import pyautogui
-import datetime
+from faker import Faker
 
 
 class Projects(BasePage):
@@ -72,12 +68,9 @@ class Projects(BasePage):
         # Wiki
         search_checkbox_wiki.click()
 
-        date = datetime.datetime.now()
-        myDate = date.today()
-        myTime = date.today().time()
-        dateString = str(myDate.month) + "-" + str(myDate.day) + "-" + str(myDate.year) + " - " + str(myTime.hour) + ":" + str(myTime.minute) + ":" + str(myTime.second)
-        screenshot = pyautogui.screenshot()
-        screenshot.save("/Users/maximacbook/Repositorio/solution/screenshots/"+dateString+" - "+name+".png")
+
+        #screenshot = pyautogui.screenshot()
+        #screenshot.save("/Users/maximacbook/Repositorio/solution/screenshots/"+dateString+" - "+name+".png")
 
         # Click on CREATE button
         search_create_button = self.driver.find_element_by_name("commit")
@@ -89,7 +82,7 @@ class Projects(BasePage):
         search_save_button.click()
 
         # -------------------------
-        screenshot.show()
+        #screenshot.show()
         # -------------------------
 
         print("------------------------------------Proyecto", name,

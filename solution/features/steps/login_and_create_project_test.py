@@ -7,11 +7,6 @@ import time
 from faker import Faker
 
 
-import requests
-import urllib.request
-from bs4 import BeautifulSoup
-
-
 @step("I create a project")
 def step_impl(context):
     project_po = Projects(context.driver)
