@@ -1,4 +1,4 @@
-from solution.page_objects.base_page_po import BasePage
+from page_objects.base_page_po import BasePage
 
 
 class Home(BasePage):
