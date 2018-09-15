@@ -44,3 +44,11 @@ def step_impl(context):
     #texto_esperado = "Logged in as mmikkan"
     texto_esperado = "Logged in as maximilianomikkan"
     assert texto_esperado == home_po.get_logged_label()
+
+
+
+
+    behave features/login_into_redmine.feature
+
+    behave features/login_and_create_project.feature
+    

@@ -14,7 +14,7 @@ Feature: Login into Redmine
       | maximilianomikkan  | empty                | false  |
       | wrong_user         | cardaABC123          | false  |
       | maximilianomikkan  | wrong_password       | false  |
-      | mmikkan  | cardaABC123          | true   |
+      | maximilianomikkan  | cardaABC123          | true   |
 
   @Working
   Scenario Outline: valid login into redmine
@@ -25,5 +25,5 @@ Feature: Login into Redmine
 
     Examples:
       | user               | password             | valid  |
-      #| maximilianomikkan  | cardaABC123          | true   |
-      | mmikkan            | cardaABC123          | true   |
+      | maximilianomikkan  | cardaABC123          | true   |
+      #| mmikkan            | cardaABC123          | true   |
