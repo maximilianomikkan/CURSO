@@ -51,4 +51,3 @@ def step_impl(context):
     behave features/login_into_redmine.feature
 
     behave features/login_and_create_project.feature
-    
