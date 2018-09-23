@@ -15,7 +15,7 @@ def after_scenario(context, scenario):
     dateString = str(myDate.month) + "-" + str(myDate.day) + "-" + str(myDate.year) + " - " + str(
         myTime.hour) + ":" + str(myTime.minute) + ":" + str(myTime.second)
     context.driver.save_screenshot(
-        "/Users/maximacbook/Repositorio/solution/screenshots/" + dateString + " - " + scenario.name + ".png")
+        "/Users/maximacbook/Repositorio/screenshots/" + dateString + " - " + scenario.name + ".png")
 
     context.driver.quit()
 

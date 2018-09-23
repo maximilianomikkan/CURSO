@@ -1,0 +1,99 @@
+<testsuite errors="0" failures="0" hostname="MaximilianosMBP.home" name="login_into_redmine.Login into Redmine" skipped="0" tests="7" time="17.529772" timestamp="2018-09-22T23:46:31.899075"><testcase classname="login_into_redmine.Login into Redmine" name="invalid login into redmine -- " status="passed" time="2.322824"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @Working
+  Scenario Outline: invalid login into redmine -- 
+    Given Setup chrome driver ... passed in 1.703s
+    And I connect to redmine ... passed in 0.321s
+    When I login as user into redmine with 'empty' and 'empty' ... passed in 0.269s
+    Then I validate I'm logged in 'false' ... passed in 0.029s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login_into_redmine.Login into Redmine" name="invalid login into redmine -- " status="passed" time="2.492958"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @Working
+  Scenario Outline: invalid login into redmine -- 
+    Given Setup chrome driver ... passed in 1.772s
+    And I connect to redmine ... passed in 0.335s
+    When I login as user into redmine with 'empty' and 'cardaABC123' ... passed in 0.355s
+    Then I validate I'm logged in 'false' ... passed in 0.030s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login_into_redmine.Login into Redmine" name="invalid login into redmine -- " status="passed" time="2.473487"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @Working
+  Scenario Outline: invalid login into redmine -- 
+    Given Setup chrome driver ... passed in 1.763s
+    And I connect to redmine ... passed in 0.338s
+    When I login as user into redmine with 'maximilianomikkan' and 'empty' ... passed in 0.345s
+    Then I validate I'm logged in 'false' ... passed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login_into_redmine.Login into Redmine" name="invalid login into redmine -- " status="passed" time="2.496931"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @Working
+  Scenario Outline: invalid login into redmine -- 
+    Given Setup chrome driver ... passed in 1.771s
+    And I connect to redmine ... passed in 0.312s
+    When I login as user into redmine with 'wrong_user' and 'cardaABC123' ... passed in 0.387s
+    Then I validate I'm logged in 'false' ... passed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login_into_redmine.Login into Redmine" name="invalid login into redmine -- " status="passed" time="2.502754"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @Working
+  Scenario Outline: invalid login into redmine -- 
+    Given Setup chrome driver ... passed in 1.776s
+    And I connect to redmine ... passed in 0.329s
+    When I login as user into redmine with 'maximilianomikkan' and 'wrong_password' ... passed in 0.370s
+    Then I validate I'm logged in 'false' ... passed in 0.028s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login_into_redmine.Login into Redmine" name="invalid login into redmine -- " status="passed" time="2.622783"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @Working
+  Scenario Outline: invalid login into redmine -- 
+    Given Setup chrome driver ... passed in 1.758s
+    And I connect to redmine ... passed in 0.313s
+    When I login as user into redmine with 'maximilianomikkan' and 'cardaABC123' ... passed in 0.525s
+    Then I validate I'm logged in 'true' ... passed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login_into_redmine.Login into Redmine" name="valid login into redmine -- " status="passed" time="2.618034"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @Working
+  Scenario Outline: valid login into redmine -- 
+    Given Setup chrome driver ... passed in 1.757s
+    And I connect to redmine ... passed in 0.336s
+    When I login as user into redmine with 'maximilianomikkan' and 'cardaABC123' ... passed in 0.497s
+    Then I validate I'm logged in 'true' ... passed in 0.029s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
