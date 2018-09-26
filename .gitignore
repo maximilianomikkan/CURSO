@@ -1,5 +1,5 @@
 /.idea
-*.xml
-*.png
+.xml
+.png
 screenshots/
 
