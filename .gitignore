@@ -1,3 +1,5 @@
 /.idea
-screenshots/
 *.xml
+*.png
+screenshots/
+
